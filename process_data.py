@@ -7,13 +7,14 @@ def load_data(messages_filepath, categories_filepath):
     #load data
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
-
+    #merge datasets
+    df = pd.merge(categories , messages, on='id')
     #expand
-    new_catagories = dw.series_str_split(categories['categories'])
+    new_catagories = dw.series_str_split(df['categories'])
     #remove the old
-    drop_old_cat = categories.drop(columns=['categories'])
-    #merge
-    return pd.concat([drop_old_cat, new_catagories], axis=1)
+    df.drop(columns=['categories'], inplace=True)
+    #return concatenated df
+    return pd.concat([df, new_catagories], axis=1)
 
 
 
