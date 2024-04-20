@@ -1,6 +1,8 @@
 import sys
 import pandas as pd
 import data_wrangling as dw
+import data_clean as dc
+from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
@@ -19,11 +21,12 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-    pass
+    return dc.Duplicate_clean(df)
 
 
 def save_data(df, database_filename):
-    pass  
+    engine = create_engine('sqlite:///DisasterResponse.db')
+    df.to_sql('Message', engine, index=False, if_exists='replace')
 
 
 def main():
