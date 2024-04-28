@@ -27,7 +27,8 @@ import pickle
 
 def load_data(database_filepath):
     #read data in
-    engine = create_engine('sqlite:///DisasterResponse.db')
+    db_path = 'sqlite:///'+database_filepath
+    engine = create_engine(db_path)
     df = pd.read_sql_table('Message', engine)
     #create dummy variables
     one_hot_encoded_genre = pd.get_dummies(df['genre'], prefix='genre')
