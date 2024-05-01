@@ -21,7 +21,7 @@ from nltk.tokenize import word_tokenize
 from sklearn.metrics import f1_score, precision_recall_fscore_support
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report,accuracy_score
-import data_saver as ds
+import models.data_saver as ds
 import pickle
 
 
@@ -42,6 +42,12 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    '''  
+     1. clean the text by removing unessary punctuations
+     2. tokenise the texts
+     3. lemmatize each token by looping
+     4. return the clean tokens
+    '''
     text_no_pun = text.translate(str.maketrans("","", string.punctuation))#remove punctuation
     stop_words = set(stopwords.words('english')) #get stop word
     tokens = word_tokenize(text_no_pun)
@@ -86,6 +92,9 @@ def build_model_gs(X_train,y_train):
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    '''  
+     This function aims to to retrive model metrics by colelcting all metrics and saving them into a Dataframe, which we will store.
+    '''
     #predict
     predictions = model.predict(X_test)
     #Initiate metrics lists

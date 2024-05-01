@@ -1,11 +1,16 @@
 import sys
 import pandas as pd
-import data_wrangling as dw
-import data_clean as dc
+import data.data_wrangling as dw
+import data.data_clean as dc
 from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    '''  
+     1. First merge the two DF on the id column
+     2. use series split (function created in another module where explained) returns columns for each category
+     3. remove the unwanted columns and return clean DF
+     '''
     #load data
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
