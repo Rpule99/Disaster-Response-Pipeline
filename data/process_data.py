@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
-import data.data_wrangling as dw
-import data.data_clean as dc
+import data_wrangling as dw
+import data_clean as dc
 from sqlalchemy import create_engine
 
 
