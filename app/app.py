@@ -39,11 +39,11 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///DisasterResponse.db')
+engine = create_engine('sqlite:///data/DisasterResponse.db')
 df = pd.read_sql_table('Message', engine)
 
 # load model
-model = joblib.load("new_best_model.pkl")
+model = joblib.load("models/new_best_model.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -61,6 +61,8 @@ def index():
     columns_exclude = ['id','message','original','genre']
     selected_columns = df.drop(columns=columns_exclude)
     category_counts_top_10 = selected_columns.sum().sort_values(ascending=False).head(10)
+
+    #
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
