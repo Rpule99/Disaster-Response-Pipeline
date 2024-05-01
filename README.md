@@ -60,7 +60,7 @@ The project can be ran via the terminal, just ensure to install the nessesary pa
 
 1. Run the command 'data/process_data.py data/messages.csv data/categories.csv data/DisasterResponse.DB' to run the ETL pipeline and save the clean data and save into the DB.
 1. Run command 'models/train_classifier.py data/DisasterResponse.DB models/new_best_model.plk' to run the classifer trainer and save model. this will also save the classifer metrics.
-1. lastly run 'app/app.py' to view the webapp and start classifying messages.
+1. lastly run 'app/app.py' to view the webapp and start classifying messages. The terminal will display ip where you can click and the web app will be shown in default browser.
 
 ## About the model
 
