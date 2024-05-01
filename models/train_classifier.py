@@ -21,7 +21,7 @@ from nltk.tokenize import word_tokenize
 from sklearn.metrics import f1_score, precision_recall_fscore_support
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report,accuracy_score
-import models.data_saver as ds
+import data_saver as ds
 import pickle
 
 
