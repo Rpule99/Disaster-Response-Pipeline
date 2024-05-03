@@ -101,11 +101,11 @@ python3 data/process_data.py data/messages.csv data/categories.csv data/Disaster
 ```
 1. Run the command to run the classifier trainer and save the model. This will also save the classifier metrics.
 ```
-models/train_classifier.py data/DisasterResponse.DB models/new_best_model.plk
+python3 models/train_classifier.py data/DisasterResponse.DB models/new_best_model.plk
 ```
 1. lastly run to view the web app and start classifying messages. The terminal will display ip where you can click and the web app will be shown in the default browser.
 ```
-'app/app.py' 
+python3 app/app.py 
 ```
 
 ## About the model
