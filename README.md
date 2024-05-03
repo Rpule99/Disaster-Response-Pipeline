@@ -99,11 +99,11 @@ The project can be run via the terminal, just ensure to install the necessary pa
 ```
 python3 data/process_data.py data/messages.csv data/categories.csv data/DisasterResponse.DB
 ```
-1. Run the command to run the classifier trainer and save the model. This will also save the classifier metrics.
+2. Run the command to run the classifier trainer and save the model. This will also save the classifier metrics.
 ```
 python3 models/train_classifier.py data/DisasterResponse.DB models/new_best_model.plk
 ```
-1. lastly run to view the web app and start classifying messages. The terminal will display ip where you can click and the web app will be shown in the default browser.
+3. lastly run to view the web app and start classifying messages. The terminal will display ip where you can click and the web app will be shown in the default browser.
 ```
 python3 app/app.py 
 ```
