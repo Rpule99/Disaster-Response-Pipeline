@@ -26,10 +26,16 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    '''
+    Calls function from module to remove duplicate rows.
+    '''
     return dc.Duplicate_clean(df)
 
 
 def save_data(df, database_filename):
+    '''
+    Saves df into the initiated database under message table
+    '''
     db_path = 'sqlite:///'+database_filename
     engine = create_engine(db_path)
     df.to_sql('Message', engine, index=False, if_exists='replace')

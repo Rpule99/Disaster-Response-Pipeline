@@ -26,6 +26,14 @@ import pickle
 
 
 def load_data(database_filepath):
+    '''
+    input: Database filepaths
+
+    Process: create DB endine and read in data from bd into a table. 
+    Then perform encoding on genre column and split data into X and Y.
+
+    Output: X and Y dataset and X's column names
+    '''
     #read data in
     db_path = 'sqlite:///'+database_filepath
     engine = create_engine(db_path)
@@ -63,6 +71,9 @@ def tokenize(text):
 
 
 def build_model():
+    '''
+    Defines the Pipeline, does Vectorisation after tokenizing, then applying XGB to the multioutput classiffier
+    '''
     #define pipeline
     pipeline_xgb =Pipeline([
                 ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -136,6 +147,9 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    '''
+    saves the model as a pickle file
+    '''
     with open(model_filepath, 'wb') as f:
         pickle.dump(model, f)
 
