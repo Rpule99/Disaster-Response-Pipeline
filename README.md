@@ -1,4 +1,4 @@
-<h1 align="center"> Disaster-Response-Pipeline/h1>
+<h1 align="center"> Disaster-Response-Pipeline</h1>
 
 <div align="center" >
   <img src="https://img.shields.io/badge/made%20by-Rethabile%20Pule-blue?style=for-the-badge&labelColor=20232a" />
@@ -13,7 +13,7 @@
 * [About the Model](#about-the-model)
 
 ## Project Description
-This project aims to classify messages sent during a disasters, using NLP to classify each message into 36 different categories which include the following categories:
+This project aims to classify messages sent during a disaster, using NLP to classify each message into 36 different categories which include the following categories:
 - genre
 - related
 - request
@@ -52,9 +52,9 @@ This project aims to classify messages sent during a disasters, using NLP to cla
 - other_weather
 - direct_report
 
-Classifying these messages will enable us to determine the current situation experience during the disaster. This will enable 1st responders and emergency departments to prepare themselves to deal with the situation. For examples if most of the messages in an area experiencing natuaral disaster such as a flood, and there are multiple injuries or death, emergency responders can emobilise themselves to better deal with the situation. The classifications can also enable better coverage of the disaster to the general public as we have multiple expirences from the victims.
+Classifying these messages will enable us to determine the current situation experienced during the disaster. This will enable 1st responders and emergency departments to prepare themselves to deal with the situation. For example, if most of the messages in an area experiencing a natural disaster such as a flood, and there are multiple injuries or deaths, emergency responders can mobilise themselves to better deal with the situation. The classifications can also enable better coverage of the disaster to the general public as we have multiple experiences from the victims.
 
-The Project will be the starting point of enabling this where we begin by cleaning the data and saving the clean data in a table in a database. Once the data is saved the trained classifier will select the data and train a classifier model using grid search for optimal hyperparameters, the model will then be saved. Lastly, a web app will be used to classify new messages and show case graphs of the training data.
+The Project will be the starting point of enabling this where we begin by cleaning the data and saving the clean data in a table in a database. Once the data is saved the trained classifier will select the data and train a classifier model using grid search for optimal hyperparameters, the model will then be saved. Lastly, a web app will be used to classify new messages and showcase graphs of the training data.
 
 ## Project Libraries
 
@@ -78,14 +78,14 @@ To run this project the following packages and libraries are required.
             - master.html: index of webapp, renders graphs
         - app.py: houses flask app, and initialises web app
     - Data
-        - categories.csv: Raw catagory data
+        - categories.csv: Raw category data
         - messages.csv: Raw messages data
         - data_clean.py: module to remove duplicates
         - data_wrangling.py: module to wrangle and clean data
-        - Disaster.db: SQLlite DB to save data
+        - Disaster.db: SQLite DB to save data
         - process_data.py: executed file to clean and save data
     - Models
-        - data_saver.py: module to save data into a the db 
+        - data_saver.py: module to save data into a db 
         - new_best_model.pkl: Pickle file which stars the saved model
         - train_classifier: trains and saves the classifier model
 
@@ -95,7 +95,7 @@ To run this project the following packages and libraries are required.
 The project can be run via the terminal, just ensure to install the necessary packages in your environment. To run the project follow the steps
 
 
-1. Run the command to run the ETL pipeline and save the clean data and save into the DB.
+1. Run the command to run the ETL pipeline save the clean data and save it into the DB.
 ```
 python3 data/process_data.py data/messages.csv data/categories.csv data/DisasterResponse.DB
 ```
